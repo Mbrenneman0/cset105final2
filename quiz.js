@@ -30,6 +30,7 @@ class Question
         for(let i = 0; i <= 3; i++)
         {
             answerField[i].innerText = this.answers[i];
+            answerField[i].className = "";
         }
 
     }
@@ -78,16 +79,18 @@ function calcScore() {
     }
 }
 
+function showResults() {
+    questionField.style.display = "none"
+    resultsField.style.display = "block"
+    resultsField.innerText = `<p>Thank your for playing!</p><h2>Your Score: ${score}/${questions.length}</h2>`
+}
 
 function defineQuestions()
 {
     //create the questions here
     //keep this function at the end for readability
     questions.push(new Question("How many shots did Ethan make into the trashcan?", 1000, 20, 0, 5, 2));
-}
-
-function showResults() {
-    questionField.style.display = "none"
-    resultsField.style.display = "block"
-    resultsField.innerText = `<p>Thank your for playing!</p><h2>Your Score: ${score}/${questions.length}</h2>`
+    questions.push(new Question("What is Mr. C's catchphrase?", "Do it now", "Don't do it now", "Collin is sleeping", "Hello Logan", 0));
+    questions.push(new Question("How many gallons of iced tea did Rob bring for the class?", 10, 25, 2, 1));
+    questions.push(new Question("What is Mr C's least favorite coding language?", "Python", "HTML/CSS", "Javascript", "C++"));
 }
