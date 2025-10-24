@@ -1,5 +1,6 @@
 let questionNumber = 0; //tracks which question number the user is on
 let questions = [] //the array that will contain the questions
+let score = 0;
 
 let questionField = document.getElementById("questionField");
 let answerField = 
@@ -40,7 +41,7 @@ questions[0].display() //displays the first question
 
 function submitBtn()
 {
-    score();
+    calcScore();
     questionNumber+=1;
     questions[questionNumber].display();
 }
@@ -62,9 +63,14 @@ function selectAnswer(item)
 
 }
 
-function score()
-{
-
+function calcScore() {
+    for(let i = 0; i <= 3; i++) {
+        if(answerField[i].className === "active") {
+            if(i === questions[questionNumber].answer) {
+                score += 1
+            }
+        }
+    }
 }
 
 
