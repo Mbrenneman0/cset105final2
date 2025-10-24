@@ -29,6 +29,7 @@ class Question
         for(let i = 0; i <= 3; i++)
         {
             answerField[i].innerText = this.answers[i];
+            answerField[i].className = "";
         }
 
     }
@@ -79,4 +80,7 @@ function defineQuestions()
     //create the questions here
     //keep this function at the end for readability
     questions.push(new Question("How many throws did Ethan make?", 1000, 20, 0, 5, 2));
+    questions.push(new Question("What is Mr. C's catchphrase?", "Do it now", "Don't do it now", "Collin is sleeping", "Hello Logan", 0));
+    questions.push(new Question("How many gallons of iced tea did Rob bring for the class?", 10, 25, 2, 1));
+    questions.push(new Question("What is Mr C's least favorite coding language?", "Python", "HTML/CSS", "Javascript", "C++"));
 }
