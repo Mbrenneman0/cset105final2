@@ -28,7 +28,7 @@ class Question
     {
         //sets the innerText of the question and each answer
         //also removes active from the previously selected answer
-        questionField.innerText = this.question
+        questionField.innerText = `${questionNumber+1}.) ${this.question}`
         for(let i = 0; i <= 3; i++)
         {
             answerField[i].innerText = this.answers[i];
