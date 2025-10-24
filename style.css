@@ -40,6 +40,11 @@ main {
 
 #resultsContainer {
     display: none;
+    text-align: center;
+}
+
+#resultsContainer p {
+    font-size: 1.5em;
 }
 
 #questionField {
@@ -74,11 +79,11 @@ main {
 }
 
 .submit {
-        text-align: center;
-        padding: 15px 10px;
-        border: 2px solid #000;
-        border-top: 1px solid #000;
-        transition-duration: 0.3s;
-        cursor: pointer;
-        border-radius: 0 0 10px 10px;
+    text-align: center;
+    padding: 15px 10px;
+    border: 2px solid #000;
+    border-top: 1px solid #000;
+    transition-duration: 0.3s;
+    cursor: pointer;
+    border-radius: 0 0 10px 10px;
 }
