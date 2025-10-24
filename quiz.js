@@ -24,7 +24,8 @@ class Question
     {
         //sets the innerText of the question and each answer
         //also removes active from the previously selected answer
-        for(let i = 0; i < 3; i++)
+        questionField.innerText = this.question
+        for(let i = 0; i <= 3; i++)
         {
             answerField[i].innerText = this.answers[i];
         }
@@ -35,7 +36,7 @@ class Question
 }
 
 defineQuestions() //creates the questions in the array
-questions[0].display //displays the first question
+questions[0].display() //displays the first question
 
 function submitBtn()
 {
@@ -47,7 +48,17 @@ function submitBtn()
 function selectAnswer(item)
 {
     //highlights the answer selected
-
+    for(i = 0; i <= 3; i++)
+    {
+        if(item === answerField[i])
+        {
+            answerField[i].className = "active";
+        }
+        else
+        {
+            answerField[i].className = "";
+        }
+    }
 
 }
 
