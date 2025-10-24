@@ -41,10 +41,27 @@ main {
 #resultsContainer {
     display: none;
     text-align: center;
+    background-color: #fff;
+    width: 40%;
+    margin: 30px auto;
+    border-radius: 8px;
+    padding: 20px 0;
+}
+
+.resetBtn {
+    display: none;
+    text-align: center;
+}
+
+.resetBtn button {
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #000;
 }
 
 #resultsContainer p {
     font-size: 1.5em;
+    margin-bottom: 10px;
 }
 
 #questionField {
@@ -72,10 +89,11 @@ main {
     background-color: lightgreen !important;
 }
 
-.answers p:hover, .submit:hover {
+.answers p:hover, .submit:hover, .resetBtn button:hover {
     text-decoration: underline;
     background-color: lightgray;
     transition-duration: 0.3s;
+    cursor: pointer;
 }
 
 .submit {

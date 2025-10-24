@@ -2,6 +2,7 @@ let questionNumber = 0; //tracks which question number the user is on
 let questions = [] //the array that will contain the questions
 let score = 0;
 
+let resetBtn = document.getElementById("reset")
 let quizContainer = document.getElementById("quizContainer")
 let resultsField = document.getElementById("resultsContainer")
 let questionField = document.getElementById("questionField");
@@ -97,7 +98,8 @@ function calcScore() {
 function showResults() {
     quizContainer.style.display = "none"
     resultsField.style.display = "block"
-    resultsField.innerHTML = `<p>Thank your for playing!</p><h2>Your Score: ${score}/${questions.length}</h2>`
+    resultsField.innerHTML = `<p>Thank you for playing!</p><h2>Your Score: ${score}/${questions.length}</h2>`
+    resetBtn.style.display = "flex"
 }
 
 function reset()
