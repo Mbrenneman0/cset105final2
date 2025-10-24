@@ -44,6 +44,20 @@ questions[0].display() //displays the first question
 
 function submitBtn()
 {
+    let answerSelected = false //temp value to check if an answer is selected
+    for(let i = 0; i<=3; i++)
+    {
+        if(answerField[i].className === "active")
+        {
+            answerSelected = true;
+        }
+    }
+    if(!answerSelected)
+    {
+        return; //escape the function and do nothing if no answer selected
+    }
+
+
     calcScore();
     if (questions.length -1 <= questionNumber) {
         showResults();
@@ -84,6 +98,16 @@ function showResults() {
     quizContainer.style.display = "none"
     resultsField.style.display = "block"
     resultsField.innerHTML = `<p>Thank your for playing!</p><h2>Your Score: ${score}/${questions.length}</h2>`
+}
+
+function reset()
+{
+    score = 0
+    questionNumber = 0
+    quizContainer.style.display = "block";
+    resultsField.style.display = "none";
+    resetBtn.style.display = "none"
+
 }
 
 function defineQuestions()
