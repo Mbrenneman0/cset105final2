@@ -64,10 +64,12 @@ main {
 
 .active {
     font-weight: bold;
+    background-color: lightgreen !important;
 }
 
 .answers p:hover, .submit:hover {
     text-decoration: underline;
+    background-color: lightgray;
     transition-duration: 0.3s;
 }
 

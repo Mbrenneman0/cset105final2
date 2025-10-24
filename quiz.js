@@ -49,7 +49,17 @@ function submitBtn()
 function selectAnswer(item)
 {
     //highlights the answer selected
-
+    for(i = 0; i <= 3; i++)
+    {
+        if(item === answerField[i])
+        {
+            answerField[i].className = "active";
+        }
+        else
+        {
+            answerField[i].className = "";
+        }
+    }
 
 }
 
