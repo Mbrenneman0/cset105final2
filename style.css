@@ -49,14 +49,15 @@ main {
 }
 
 .resetBtn {
-    display: none;
     text-align: center;
 }
 
 .resetBtn button {
+    display: none;
     padding: 20px;
     border-radius: 10px;
     border: 2px solid #000;
+    margin: 0 auto;
 }
 
 #resultsContainer p {
