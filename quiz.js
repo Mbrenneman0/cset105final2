@@ -99,7 +99,7 @@ function showResults() {
     quizContainer.style.display = "none"
     resultsField.style.display = "block"
     resultsField.innerHTML = `<p>Thank you for playing!</p><h2>Your Score: ${score}/${questions.length}</h2>`
-    resetBtn.style.display = "flex"
+    resetBtn.style.display = "block"
 }
 
 function reset()
@@ -109,7 +109,7 @@ function reset()
     quizContainer.style.display = "block";
     resultsField.style.display = "none";
     resetBtn.style.display = "none"
-
+    questions[0].display()
 }
 
 function defineQuestions()
