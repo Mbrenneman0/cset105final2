@@ -1,5 +1,6 @@
 let questionNumber = 0; //tracks which question number the user is on
 let questions = [] //the array that will contain the questions
+let score = 0;
 
 let questionField = document.getElementById("questionField");
 let answerField = 
@@ -24,7 +25,8 @@ class Question
     {
         //sets the innerText of the question and each answer
         //also removes active from the previously selected answer
-        for(let i = 0; i < 3; i++)
+        questionField.innerText = this.question
+        for(let i = 0; i <= 3; i++)
         {
             answerField[i].innerText = this.answers[i];
         }
@@ -35,11 +37,11 @@ class Question
 }
 
 defineQuestions() //creates the questions in the array
-questions[0].display //displays the first question
+questions[0].display() //displays the first question
 
 function submitBtn()
 {
-    score();
+    calcScore();
     questionNumber+=1;
     questions[questionNumber].display();
 }
@@ -51,9 +53,14 @@ function selectAnswer(item)
 
 }
 
-function score()
-{
-
+function calcScore() {
+    for(let i = 0; i <= 3; i++) {
+        if(answerField[i].className === "active") {
+            if(i === questions[questionNumber].answer) {
+                score += 1
+            }
+        }
+    }
 }
 
 
