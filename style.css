@@ -46,7 +46,6 @@ main {
     width: 40%;
     background-color: #fff;
     border-radius: 10px;
-    height: 325px;
 }
 
 #resultsContainer, #history {
