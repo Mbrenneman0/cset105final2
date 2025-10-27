@@ -22,6 +22,7 @@ class Question
         this.question = question;
         this.answers = [answ1, answ2, answ3, answ4];
         this.correct = correct;
+        this.userAnswer = null
     }
 
     display()
@@ -76,6 +77,7 @@ function selectAnswer(item)
         if(item === answerField[i])
         {
             answerField[i].className = "active";
+            questions[questionNumber].userAnswer = i;
         }
         else
         {
@@ -86,12 +88,8 @@ function selectAnswer(item)
 }
 
 function calcScore() {
-    for(let i = 0; i <= 3; i++) {
-        if(answerField[i].className === "active") {
-            if(i === questions[questionNumber].correct) {
-                score = score + 1
-            }
-        }
+    if(questions[questionNumber].userAnswer === questions[questionNumber].correct) {
+        score = score + 1
     }
 }
 
@@ -111,6 +109,11 @@ function reset()
     resultsField.style.display = "none";
     resetBtn.style.display = "none"
     questions[0].display()
+    for(i = 0; i < questions.length; i++)
+    {
+        questions[i].userAnswer = null;
+    }
+    
 }
 
 function defineQuestions()
