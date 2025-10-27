@@ -98,6 +98,7 @@ function calcScore() {
 function showResults() {
     quizContainer.style.display = "none"
     resultsField.style.display = "block"
+    resultsField.className = "score"
     resultsField.innerHTML = `<p>Thank you for playing!</p><h2>Your Score: ${score}/${questions.length}</h2>`
     resetBtn.style.display = "block"
 }
