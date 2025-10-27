@@ -5,6 +5,7 @@ let score = 0;
 let resetBtn = document.getElementById("reset")
 let quizContainer = document.getElementById("quizContainer")
 let resultsField = document.getElementById("resultsContainer")
+let historyField = document.getElementById("history")
 let questionField = document.getElementById("questionField");
 let answerField =
     [  
@@ -99,6 +100,8 @@ function showResults() {
     resultsField.className = "score"
     resultsField.innerHTML = `<p>Thank you for playing!</p><h2>Your Score: ${score}/${questions.length}</h2>`
     resetBtn.style.display = "block"
+    historyField.innerHTML = generateHistoryHTML();
+    historyField.style.display = "block"
 }
 
 function reset()
@@ -108,12 +111,28 @@ function reset()
     quizContainer.style.display = "block";
     resultsField.style.display = "none";
     resetBtn.style.display = "none"
+    historyField.style.display = "none"
     questions[0].display()
     for(i = 0; i < questions.length; i++)
     {
         questions[i].userAnswer = null;
     }
     
+}
+
+function generateHistoryHTML()
+{
+    let htmlString = "<h2>Results</h2>"
+    for(i = 0; i<questions.length; i++)
+    {
+        let question = questions[i].question
+        let correctAnswer = questions[i].answers[questions[i].correctAnswer]
+        let userAnswer = questions[i].answers[questions[i].userAnswer]
+        htmlString += `<p>${question}</p>`
+        htmlString += `<p>Your Answer: ${userAnswer} Correct Answer: ${correctAnswer} Result: ${(userAnswer === correctAnswer) ? `Correct` : `Wrong`}</p>`
+    }
+
+    return htmlString;
 }
 
 function defineQuestions()

@@ -59,6 +59,15 @@ main {
     padding: 20px 0;
 }
 
+#history {
+    display: none;
+    text-align: center;
+    background-color: #fff;
+    width: 40%;
+    margin: 30px auto;
+    border-radius: 8px;
+    padding: 20px 0;
+}
 
 .resetBtn {
     text-align: center;
