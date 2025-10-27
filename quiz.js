@@ -126,10 +126,11 @@ function generateHistoryHTML()
     for(i = 0; i<questions.length; i++)
     {
         let question = questions[i].question
-        let correctAnswer = questions[i].answers[questions[i].correctAnswer]
+        let correctAnswer = questions[i].answers[questions[i].correct]
         let userAnswer = questions[i].answers[questions[i].userAnswer]
-        htmlString += `<p>${question}</p>`
-        htmlString += `<p>Your Answer: ${userAnswer} Correct Answer: ${correctAnswer} Result: ${(userAnswer === correctAnswer) ? `Correct` : `Wrong`}</p>`
+        htmlString += `<p>${i + 1}\: ${question}</p>`
+        htmlString += `<p>Your Answer: ${userAnswer}, Correct Answer: ${correctAnswer}</p>`
+        htmlString += `<p id="break">Result: ${(userAnswer === correctAnswer) ? `Correct` : `Wrong`}</p>`
     }
 
     return htmlString;
